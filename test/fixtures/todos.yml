@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+todos:
+  - text: 'Купить молоко'
+    isCompleted: false
+  - text: 'Заменить масло в двигателе до 23 апреля'
+    isCompleted: false
+  - text: 'Отправить письмо бабушке'
+    isCompleted: true
+  - text: 'Заплатить за квартиру'
+    isCompleted: false
+  - text: 'Забрать обувь из ремонта'
+    isCompleted: false
