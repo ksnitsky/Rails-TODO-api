@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live on Heroku](https://oblako-tt-konstantin.herokuapp.com/)
+> Рут '/' пустой
 
-Things you may want to cover:
+# API-методы
 
-* Ruby version
+* GET /projects — вернуть все проекты с задачами;
 
-* System dependencies
+* POST /todos — создать новую задачу;
+  > Пример отправляемых данных:
+  ```json
+    {
+      "text": "Текст задачи",
+      "project_title": "Название проекта"
+    }
+  ```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* PATCH /projects/id/todo/id — обновить задачу
+    > Cтатус меняется на противоположный
