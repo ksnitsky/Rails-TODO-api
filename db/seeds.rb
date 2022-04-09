@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# seeds = YAML::load_file(Rails.root.join('test', 'fixtures', 'files', 'seed_data.yml'))
-# seeds['projects'].each do |x|
-#   Project.new(
-#     title: x['title'].downcase,
-#     todos: Todo.create(x['todos'])
-#   ).save
-# end
+seeds = YAML::load_file(Rails.root.join('test', 'fixtures', 'files', 'seed_data.yml'))
+seeds['projects'].each do |x|
+  Project.new(
+    title: x['title'].downcase,
+    todos: Todo.create(x['todos'])
+  ).save
+end

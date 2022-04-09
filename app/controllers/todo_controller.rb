@@ -1,11 +1,8 @@
 class TodoController < ApplicationController
   def create
-    todo = Todo.create(todo_params)
-    if todo.save
-      render status: :created,
-             json: {
-               status: 200,
-               message: 'Задача успешно создана.' }
+    @todo = Todo.create(todo_params)
+    if @todo.save
+      render status: :created
     else
       render status: :internal_server_error,
              json: { message: 'Что-то пошло не так.' }
@@ -13,12 +10,12 @@ class TodoController < ApplicationController
   end
 
   def update
-    @todo = Todo.find_by(
+    todo = Todo.find_by(
       id: params[:id],
       project_id: params[:project_id]
     )
-    if @todo&.complete
-      render status: :ok
+    if todo&.complete
+      render status: :ok, json: { message: 'Задача успешно обновлена.' }
     else
       render status: :not_found, json: { message: 'Такой задачи не существует.' }
     end
